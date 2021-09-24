@@ -4,7 +4,9 @@ const {port,database} = require('./config')
 
 const app = express()
 
-mongoose.connect(database)
+mongoose.connect(database,()=>{
+    console.log('connect database');
+})
 
 //middleware
 app.use(express.urlencoded({extended:true}))
